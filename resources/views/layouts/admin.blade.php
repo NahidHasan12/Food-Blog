@@ -25,7 +25,10 @@
   <link href="{{ asset('/backend') }}/images/favicon.png" rel="shortcut icon" />
   {{-- select2 --}}
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
+  {{-- drofify link --}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.css" integrity="sha512-In/+MILhf6UMDJU4ZhDL0R0fEpsp4D3Le23m6+ujDWXwl3whwpucJG1PEmI3B07nyJx+875ccs+yX2CqQJUxUw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  {{-- summernote link --}}
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 </head>
 
 
@@ -186,6 +189,22 @@
     <script src="{{ asset('/backend') }}/js/map.js"></script>
     <script src="{{ asset('/backend') }}/js/custom.js"></script>
     <script src="{{ asset('/backend') }}/plugins/nprogress/nprogress.js"></script>
+
+    {{-- Dropify link --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js" integrity="sha512-8QFTrG0oeOiyWo/VM9Y8kgxdlCryqhIxVeRpWSezdRRAvarxVtwLnGroJgnVW9/XBRduxO/z1GblzPrMQoeuew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {{-- Dropify script --}}
+    <script>
+        $('.dropify').dropify();
+    </script>
+
+    {{-- summer note js link --}}
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+        // summernote run code
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
+    </script>
 
     {{-- select2 --}}
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>

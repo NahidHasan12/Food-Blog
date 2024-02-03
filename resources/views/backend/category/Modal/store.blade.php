@@ -1,6 +1,6 @@
 <div class="modal fade" id="cat_store" tabindex="-1" role="dialog" aria-labelledby="exampleModalSmallTitle"
   aria-hidden="true">
-  <div class="modal-dialog modal-sm" role="document">
+  <div style="border: 2px solid rgb(124, 17, 139); border-radius:5px" class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalSmallTitle">Add New Category</h5>

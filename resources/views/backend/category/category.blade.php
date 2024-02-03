@@ -6,9 +6,11 @@
 
 <div class="content-wrapper">
     <div class="content">
-        <div class="row d-flex">
+        <div class="row">
             <a href="" class="btn btn-sm" style="background: #6f42c1; color:white; font-weight: bold;" data-toggle="modal" data-target="#cat_store"> <i style="font-size:15px" class="mdi mdi-pen"></i>Add Category</a>
-            <div class="ml-5">
+        </div>
+        <div class="row">
+             <div class="ml-5">
                 @if (session()->has('success'))
                     <div style="font-size: 15px; color:white" class="badge d-block bg-warning">{{ session()->get('success') }}</div>
                 @elseif(session()->get('error'))

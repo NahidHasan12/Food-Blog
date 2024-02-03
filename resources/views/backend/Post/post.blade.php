@@ -10,6 +10,15 @@
             <a  class="btn btn-sm" style="background: #6f42c1; color:white; font-weight: bold;" data-toggle="modal" data-target="#post_store"> <i style="font-size:15px" class="mdi mdi-pen"></i>Add Post</a>
         </div>
         <div class="row">
+            <div class="ml-5">
+               @if (session()->has('success'))
+                   <div style="font-size: 15px; color:white" class="badge d-block bg-warning">{{ session()->get('success') }}</div>
+               @elseif(session()->get('error'))
+                   <div style="font-size: 15px; color:white" class="badge d-block bg-danger">{{ session()->get('error') }}</div>
+               @endif
+           </div>
+       </div>
+        <div class="row">
             <div class="card w-100">
                 <div class="card-header d-flex justify-content-between">
                     <div>
@@ -37,7 +46,7 @@
                     <div class="row">
                         <div class="col-4"><h1>image</h1></div>
                         <div class="col-8">
-                            <h4>Post Titel</h4>
+                            <h4>Post Title</h4>
                             <small>category name</small>
                             <p>Post Descriottion</p>
                             <div>
