@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Editor\EditorController;
+
 use App\Http\Controllers\Frontend\PagesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/home', function(){
+    return redirect()->route('/');
+});
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // page Manage
@@ -30,11 +33,4 @@ Route::get('/contact', [PagesController::class, 'contact'])->name('pages.contact
 Route::get('/category', [PagesController::class, 'category'])->name('pages.category');
 
 
-// MUlti Auth Route
-Route::get('/admin/login', [AdminController::class, 'login_from']);
-Route::post('/admin/check_login', [AdminController::class, 'login'])->name('admin.login');
-Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
-Route::get('/editor/login', [EditorController::class, 'login_from']);
-Route::post('/editor/check_login', [EditorController::class, 'login'])->name('editor.login');
-Route::get('/editor/logout', [EditorController::class, 'logout'])->name('editor.logout');

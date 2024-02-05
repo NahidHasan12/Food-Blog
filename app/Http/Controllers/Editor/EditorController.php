@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class EditorController extends Controller
 {
+    public function index(){
+        return view('Editor.dashboard');
+    }
+
     public function login_from(){
         return view('Editor.login');
     }
@@ -15,7 +19,7 @@ class EditorController extends Controller
     public function login(Request $request){
 
         $input = $request->all();
-
+        // dd($input);
         $this->validate($request,[
             'email' => 'required',
             'password' => 'required|min:6'

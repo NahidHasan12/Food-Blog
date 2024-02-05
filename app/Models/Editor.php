@@ -12,4 +12,5 @@ class Editor extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $guard = 'editor';
+    protected $guarded = [];
 }

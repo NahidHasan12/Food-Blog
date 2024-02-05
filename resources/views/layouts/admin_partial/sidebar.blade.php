@@ -43,48 +43,24 @@
             <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users"
                 aria-expanded="false" aria-controls="users">
                 <i class="mdi mdi-image-filter-none"></i>
-                <span class="nav-text">User</span> <b class="caret"></b>
+                <span class="nav-text">Editor</span> <b class="caret"></b>
             </a>
             <ul  class="collapse"  id="users"
                 data-parent="#sidebar-menu">
                 <div class="sub-menu">
                     <li>
-                        <a class="sidenav-item-link" href="user-profile.html">
-                        <span class="nav-text">User Profile</span>
+                        <a class="sidenav-item-link" href="{{ route('admin.editor') }}">
+                        <span class="nav-text">Add Editor</span>
                         </a>
                     </li>
                     <li>
                         <a class="sidenav-item-link" href="user-activities.html">
-                        <span class="nav-text">User Activities</span>
-
-                        </a>
-                    </li>
-                    <li>
-                        <a class="sidenav-item-link" href="user-profile-settings.html">
-                        <span class="nav-text">User Profile Settings</span>
-
+                        <span class="nav-text">Editor Activities</span>
                         </a>
                     </li>
                     <li>
                         <a class="sidenav-item-link" href="user-account-settings.html">
-                        <span class="nav-text">User Account Settings</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="sidenav-item-link" href="user-planing-settings.html">
-                        <span class="nav-text">User Planing Settings</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="sidenav-item-link" href="user-billing.html">
-                        <span class="nav-text">User billing</span>
-
-                        </a>
-                    </li>
-                    <li>
-                        <a class="sidenav-item-link" href="user-notify-settings.html">
-                        <span class="nav-text">User Notify Settings</span>
-
+                        <span class="nav-text">Editor Account Settings</span>
                         </a>
                     </li>
                 </div>

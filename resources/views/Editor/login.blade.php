@@ -102,18 +102,19 @@
 <body>
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
-        <div class="row">
-            <div class="ml-5">
-               @if (session()->has('success'))
-                   <div style="font-size: 15px; color:white" class="badge d-block bg-warning">{{ session()->get('success') }}</div>
-               @elseif(session()->get('error'))
-                   <div style="font-size: 15px; color:white" class="badge d-block bg-danger">{{ session()->get('error') }}</div>
-               @endif
-           </div>
-       </div>
+
 		<div class="card">
 			<div class="card-header">
 				<h3>Editor Sign In</h3>
+                <div class="row">
+                    <div class="ml-5">
+                       @if (session()->has('success'))
+                           <div style="font-size: 15px; color:white" class="badge d-block bg-warning">{{ session()->get('success') }}</div>
+                       @elseif(session()->get('error'))
+                           <div style="font-size: 15px; color:white" class="badge d-block bg-danger">{{ session()->get('error') }}</div>
+                       @endif
+                   </div>
+               </div>
 				<div class="d-flex justify-content-end social_icon">
 					<span><i class="fab fa-facebook-square"></i></span>
 					<span><i class="fab fa-google-plus-square"></i></span>
@@ -128,23 +129,23 @@
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
 						<input type="text" name="email" class="form-control" placeholder="username">
-                        <div>
-                            @error('email')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
 					</div>
+                    <div>
+                        @error('email')
+                            <div class="text-danger bg-light mb-2">{{ $message }}</div>
+                        @enderror
+                    </div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
 						<input type="password" name="password" class="form-control" placeholder="password">
-                        <div>
-                            @error('password')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
 					</div>
+                    <div>
+                        @error('password')
+                            <span class="text-danger bg-light">{{ $message }}</span>
+                        @enderror
+                    </div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Remember Me
 					</div>

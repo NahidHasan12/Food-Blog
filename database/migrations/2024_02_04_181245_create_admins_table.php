@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('slug');
             $table->string('email');
             $table->string('password');
+            $table->string('show_password');
+            $table->string('image')->nullable();
             $table->dateTime('login_at');
             $table->timestamps();
         });

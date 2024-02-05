@@ -157,19 +157,21 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="row">
-                    <div class="ml-5">
-                       @if (session()->has('success'))
-                           <div style="font-size: 15px; color:white" class="badge d-block bg-warning">{{ session()->get('success') }}</div>
-                       @elseif(session()->get('error'))
-                           <div style="font-size: 15px; color:white" class="badge d-block bg-danger">{{ session()->get('error') }}</div>
-                       @endif
-                   </div>
-               </div>
+
                 <div class="card">
                     <form method="POST" action="{{ route('admin.login') }}" class="box">
                         @csrf
-                        <h1> Admin Login</h1> <p class="text-muted"> Please enter your Username and password!</p>
+                        <h1> Admin Login</h1>
+                        <p class="text-muted"> Please enter your Username and password!</p>
+                        <div class="row">
+                            <div class="ml-5">
+                               @if (session()->has('success'))
+                                   <div style="margin-left:70px; font-size: 15px; color:white" class="badge d-block bg-warning">{{ session()->get('success') }}</div>
+                               @elseif(session()->get('error'))
+                                   <div style="margin-left:70px; font-size: 15px; color:white" class="badge d-block bg-danger">{{ session()->get('error') }}</div>
+                               @endif
+                           </div>
+                       </div>
                         <input type="text" name="email" placeholder="Username">
                         @error('email')
                             <span class="text-danger">{{ $message }}</span>

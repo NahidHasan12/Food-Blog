@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class Permission
+class editor_permission
 {
     /**
      * Handle an incoming request.
@@ -16,10 +16,9 @@ class Permission
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::guard('admin')->check()){
+        if(Auth::guard('editor')->check()){
             return $next($request);
         }
-        return redirect()->route('admin.login_form');
-
+        return redirect()->route('editor.login_form');
     }
 }
