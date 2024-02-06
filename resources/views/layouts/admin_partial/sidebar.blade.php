@@ -5,7 +5,7 @@
     <!-- Aplication Brand -->
     <div class="app-brand">
         <a href="/index.html">
-        <img src="images/logo.png" alt="BD">
+            BD
         <span class="brand-name">Cooker</span>
         </a>
     </div>

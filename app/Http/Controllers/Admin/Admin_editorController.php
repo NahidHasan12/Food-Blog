@@ -28,13 +28,61 @@ class Admin_editorController extends Controller
             'last_name' => $request->last_name,
             'slug' => 'ed'.uniqid(4),
             'email' => $request->email,
-            'password' => bcrypt($request->Password),
+            'password' => bcrypt($request->password),
             'show_password' => $request->password,
             'image' => $image,
-            'login_at' => date('Y-m-d H:i:s'),
+            'login_at' => now(),
         ]);
         if($editor){
             return redirect()->back()->with('success','Editor Created');
+        }else{
+            return redirect()->back()->with('error','Something Error');
+        }
+    }
+
+    public function edit_editor($id){
+        // dd($id);
+        $editor_data = Editor::findOrFail($id);
+        return view('backend.Editor.edit', compact('editor_data'));
+    }
+
+    public function update_editor(Request $request, $id){
+        $editor = Editor::findOrFail($id);
+
+        $this->validate($request,[
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required','email',
+            'password' => 'required|min:6'
+        ]);
+        // dd($request->all());
+        if($request->hasFile('image')){
+            $image = $this->file_update($request->file('image'),'backend/editor',$editor->image);
+        }else{
+            $image = $editor->image;
+        }
+
+        $data=$editor->update([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'show_password' => $request->password,
+            'image' => $image,
+            'login_at' => now(),
+        ]);
+        if($data){
+            return redirect()->back()->with('success','Editor Updated');
+        }else{
+            return redirect()->back()->with('error','Something Error');
+        }
+    }
+
+    public function delete_editor($id){
+        $editor = Editor::findOrFail($id)->first();
+        $editor->delete();
+        if($editor){
+            return redirect()->back()->with('success','Editor Deleted');
         }else{
             return redirect()->back()->with('error','Something Error');
         }

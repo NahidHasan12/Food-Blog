@@ -25,7 +25,7 @@ class EditorController extends Controller
             'password' => 'required|min:6'
         ]);
         if(Auth::guard('editor')->attempt(['email' => $input['email'], 'password' => $input['password']])){
-            return view('Editor.dashboard');
+            return redirect('/editor');
         }else{
             return redirect()->back()->with('error','Username or Password Ivalid');
         }

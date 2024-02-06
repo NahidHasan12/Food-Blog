@@ -23,10 +23,12 @@
                         <div class="mb-2">
                           <label for="category" class="form-label">Select Category</label> <br>
                           <select style="width:300px" class="form-control select2" name="category" id="category">
-                            <option value="">fast food</option>
-                            <option value="">diet food</option>
-                            <option value="">Biriany</option>
-                          </select>
+                            @forelse ($category as $item)
+                                <option value="{{ $item->id }}"> {{ $item->name }} </option>
+                            @empty
+                                <span class="text-danger text-center">No Category Found</span>
+                            @endforelse
+                        </select>
                         </div>
                     </div>
                     <div class="col-6">

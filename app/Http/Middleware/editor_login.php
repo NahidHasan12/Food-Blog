@@ -19,7 +19,6 @@ class editor_login
         if(!Auth::guard('editor')->check()){
             return $next($request);
         }
-
         return redirect()->back();
     }
 }

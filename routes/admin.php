@@ -30,10 +30,16 @@ Route::middleware(['permission'])->group(function() {
 
     // post
     Route::get('/admin/post', [PostController::class, 'index'])->name('page.post');
-    Route::get('/admin/post/store', [PostController::class, 'post_store'])->name('post.store');
+    Route::post('/admin/post/store', [PostController::class, 'post_store'])->name('post.store');
+    Route::get('/admin/post/edit/{id}', [PostController::class, 'post_edit'])->name('post.edit');
+    Route::put('/admin/post/update/{id}', [PostController::class, 'post_update'])->name('post.update');
+    Route::get('/admin/post/delete/{id}', [PostController::class, 'post_delete'])->name('post.delete');
 
     //Editor
     Route::get('/admin/editor', [Admin_editorController::class, 'add_editor'])->name('admin.editor');
     Route::post('/admin/editor/store', [Admin_editorController::class, 'store_editor'])->name('editor.store');
+    Route::get('/admin/editor/edit/{id}', [Admin_editorController::class, 'edit_editor'])->name('editor.edit');
+    Route::put('/admin/editor/update/{id}', [Admin_editorController::class, 'update_editor'])->name('editor.update');
+    Route::get('/admin/editor/delete/{id}', [Admin_editorController::class, 'delete_editor'])->name('editor.delete');
 
 });

@@ -12,5 +12,14 @@ class Editor extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $guard = 'editor';
-    protected $guarded = [];
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'slug',
+        'email',
+        'password',
+        'show_password',
+        'image',
+        'login_at'
+    ];
 }

@@ -9,13 +9,15 @@
         <div class="row">
             <a href="" class="btn btn-sm" style="background: #6f42c1; color:white; font-weight: bold;" data-toggle="modal" data-target="#editor_store"> <i style="font-size:15px" class="mdi mdi-pen"></i>Add Employe</a>
         </div>
-        <div class="row">
-             <div class="ml-5">
-                @if (session()->has('success'))
-                    <div style="font-size: 15px; color:white" class="badge d-block bg-warning">{{ session()->get('success') }}</div>
-                @elseif(session()->get('error'))
-                    <div style="font-size: 15px; color:white" class="badge d-block bg-danger">{{ session()->get('error') }}</div>
-                @endif
+        <div class="row mt-3">
+            <div class="card w-100">
+                <div>
+                    @if (session()->has('success'))
+                        <div style="font-size: 15px; color:white" class="badge d-block bg-warning">{{ session()->get('success') }}</div>
+                    @elseif(session()->get('error'))
+                        <div style="font-size: 15px; color:white" class="badge d-block bg-danger">{{ session()->get('error') }}</div>
+                    @endif
+                </div>
             </div>
         </div>
         <div class="row ml-1 mt-3">
@@ -42,8 +44,8 @@
                                 <td>{{ $item->email }}</td>
                                 <td>{{ $item->show_password }}</td>
                                 <td>
-                                    <a href="" title="Edit Editor" style="height:28px; padding-top:5px; background: #060e64; color:white; font-weight: bold;" class="btn btn-sm"><i class="mdi mdi-pencil"></i></a>
-                                    <a href="" title="Delete Editor" style="height:28px; padding-top:5px; background: #7f0303; color:white; font-weight: bold;" class="btn btn-sm"><i class="mdi mdi-delete-sweep"></i></a>
+                                    <a href="{{ route('editor.edit',$item->id) }}" title="Edit Editor" style="height:28px; padding-top:5px; background: #060e64; color:white; font-weight: bold;" class="btn btn-sm"><i class="mdi mdi-pencil"></i></a>
+                                    <a href="{{ route('editor.delete',$item->id) }}" title="Delete Editor" style="height:28px; padding-top:5px; background: #7f0303; color:white; font-weight: bold;" class="btn btn-sm"><i class="mdi mdi-delete-sweep"></i></a>
                                 </td>
                             </tr>
                         @empty

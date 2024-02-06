@@ -7,7 +7,7 @@
 <div class="content-wrapper">
     <div class="content">
         <div class="row">
-            <a href="{{ route('page.category') }}" class="btn btn-sm btn-outline-danger mb-3">Back</a>
+            <a href="{{ route('page.category') }}" class="btn btn-sm btn-outline-danger mb-3"><i style="font-size:15px" class="mdi mdi-arrow-left-bold"></i></a>
         </div>
         <div class="row">
             <div style="border: 1px solid rgb(65, 0, 122); font-weight:bold" class="card p-3 w-100">
