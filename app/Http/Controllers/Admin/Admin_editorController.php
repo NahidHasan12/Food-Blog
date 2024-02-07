@@ -80,6 +80,12 @@ class Admin_editorController extends Controller
 
     public function delete_editor($id){
         $editor = Editor::findOrFail($id)->first();
+        // dd($editor->image);
+        if (file_exists('backend/editor/' . $editor->image)) {
+            if (!unlink('backend/editor/' . $editor->image)) {
+                return redirect()->back()->with('error', 'Failed to delete post image');
+            }
+        }
         $editor->delete();
         if($editor){
             return redirect()->back()->with('success','Editor Deleted');

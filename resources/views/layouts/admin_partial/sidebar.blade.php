@@ -21,19 +21,19 @@
             </li>
             <li>
                 <a class="sidenav-item-link" href="{{ route('page.category') }}">
-                    <i class="mdi mdi-message-draw"></i>
+                    <i class="mdi mdi-dlna"></i>
                     <span class="nav-text">Category</span>
                 </a>
             </li>
             <li>
                 <a class="sidenav-item-link" href="{{ route('page.post') }}">
-                    <i class="mdi mdi-message-draw"></i>
-                    <span class="nav-text">All Post</span>
+                    <i class="mdi mdi-package-variant"></i>
+                    <span class="nav-text">Post</span>
                 </a>
             </li>
             <li>
                 <a class="sidenav-item-link" href="{{ route('page.web_settings') }}">
-                    <i class="mdi mdi-message-draw"></i>
+                    <i class="mdi mdi-android-debug-bridge"></i>
                     <span class="nav-text">Web Settings</span>
                 </a>
             </li>
@@ -42,7 +42,7 @@
             <li  class="has-sub" >
             <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users"
                 aria-expanded="false" aria-controls="users">
-                <i class="mdi mdi-image-filter-none"></i>
+                <i class="mdi mdi-face"></i>
                 <span class="nav-text">Editor</span> <b class="caret"></b>
             </a>
             <ul  class="collapse"  id="users"
@@ -56,11 +56,6 @@
                     <li>
                         <a class="sidenav-item-link" href="user-activities.html">
                         <span class="nav-text">Editor Activities</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="sidenav-item-link" href="user-account-settings.html">
-                        <span class="nav-text">Editor Account Settings</span>
                         </a>
                     </li>
                 </div>

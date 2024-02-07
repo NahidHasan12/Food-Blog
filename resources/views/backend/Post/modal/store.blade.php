@@ -47,7 +47,7 @@
                 </div>
                 <div class="row">
                   <div class="col-12">
-                    <label for="title" class="form-label"> Post Articel</label>
+                    <label for="details" class="form-label"> Post Articel</label>
                     <textarea id="summernote" name="details" class="form-control" cols="30" rows="10"></textarea>
                   </div>
                 </div>

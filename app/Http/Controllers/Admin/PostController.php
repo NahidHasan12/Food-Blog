@@ -42,9 +42,17 @@ class PostController extends Controller
         return view('backend.Post.edit', compact('post','cat'));
     }
 
-    public function post_update(PostRequest $request, $id){
-        // dd($request->all());
+    public function post_update(Request $request, $id){
+
         $post = Post::findOrFail($id);
+
+        $this->validate($request,[
+            'title' => ['required', 'max:50', 'min:10'],
+            'details' => ['required', 'max:3000', 'min:300'],
+            'category' => ['required'],
+            'status' => ['required','max:1'],
+        ]);
+
         if($request->hasFile('image')){
             $image = $this->file_update($request->file('image'),'backend/post_img',$post->image);
         }else{
@@ -57,15 +65,25 @@ class PostController extends Controller
             'status'=>$request->status,
             'image'=>$image,
         ]);
+
         if($data){
-            return redirect()->back()->with('success','Post has Been updated');
+            return redirect()->back()->with('success','Post Has Been Updated');
         }else{
-            return redirect()->back()->with('error','Something Error');
+            return redirect()->back()->with('error', 'Something Error');
         }
+
     }
+
 
     public function post_delete($id){
         $post = Post::findOrFail($id);
+        //dd($post->image);
+        if (file_exists('backend/post_img/' . $post->image)) {
+            if (!unlink('backend/post_img/' . $post->image)) {
+                return redirect()->back()->with('error', 'Failed to delete post image');
+            }
+        }
+
         $post->delete();
         if($post){
             return redirect()->back()->with('success','Post has Been Deleted');
