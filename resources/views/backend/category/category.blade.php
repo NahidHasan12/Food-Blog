@@ -6,29 +6,34 @@
 
 <div class="content-wrapper">
     <div class="content">
-        <div class="row">
+        <div class="row mb-2">
             <a href="" class="btn btn-sm" style="background: #6f42c1; color:white; font-weight: bold;" data-toggle="modal" data-target="#cat_store"> <i style="font-size:15px" class="mdi mdi-pen"></i>Add Category</a>
         </div>
         <div class="row">
-             <div class="ml-5">
-                @if (session()->has('success'))
-                    <div style="font-size: 15px; color:white" class="badge d-block bg-warning">{{ session()->get('success') }}</div>
-                @elseif(session()->get('error'))
-                    <div style="font-size: 15px; color:white" class="badge d-block bg-danger">{{ session()->get('error') }}</div>
-                @endif
+            <div class="card w-100">
+                <div>
+                   @if (session()->has('success'))
+                       <div style="font-size: 15px; color:white" class="badge d-block bg-warning">{{ session()->get('success') }}</div>
+                   @elseif(session()->get('error'))
+                       <div style="font-size: 15px; color:white" class="badge d-block bg-danger">{{ session()->get('error') }}</div>
+                   @endif
+               </div>
             </div>
         </div>
         <div class="row">
             <div class="card w-100">
                 <div class="card-header d-flex justify-content-between">
                     <div>
-                        <form action="" method="GET">
+                        <form action="{{ route('category.search_category') }}" method="GET">
                             @csrf
-                            <select style="width: 300px; float:left; margin-right: 5px" name="post_search" class="form-control select2">
+                            <select style="width: 300px; float:left; margin-right: 5px" name="cat_search" class="form-control select2">
                                 <option selected disabled>id or category</option>
-                                <option value="">Fast Food</option>
-                                <option value="">Biriany</option>
-                                <option value="">Jank Food</option>
+                                <option>All category</option>
+                                @forelse ($search_cat as $cat)
+                                    <option value="{{ $cat->id }}">({{ $cat->id }}) {{ $cat->name }}</option>
+                                @empty
+                                    <span class="text-danger">No Category Found</span>
+                                @endforelse
                             </select>
                             <button style="height:28px; padding-top:5px; margin-top: 2px; font-weight:bold; background:#6f42c1; color:white" type="submit" class="btn btn-sm">Find</button>
                         </form>

@@ -88,15 +88,10 @@
                 </a>
                 </li>
                 <li>
-                <a class="dropdown-link-item" href="user-activities.html">
-                    <i class="mdi mdi-diamond-stone"></i>
-                    <span class="nav-text">Activitise</span></a>
-                </li>
-                <li>
-                <a class="dropdown-link-item" href="user-account-settings.html">
-                    <i class="mdi mdi-settings"></i>
-                    <span class="nav-text">Account Setting</span>
-                </a>
+                    <a class="dropdown-link-item" href="{{ route('admin.change_password') }}">
+                        <i class="mdi mdi-settings"></i>
+                        <span class="nav-text">Account Setting</span>
+                    </a>
                 </li>
 
                 <li class="dropdown-footer">

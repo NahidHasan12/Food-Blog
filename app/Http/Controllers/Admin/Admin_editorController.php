@@ -10,8 +10,21 @@ class Admin_editorController extends Controller
 {
     public function add_editor(){
         $editor = Editor::all();
-        return view('backend.Editor.add_editor', compact('editor'));
+        $search_editor = Editor::all();
+        return view('backend.Editor.add_editor', compact('editor','search_editor'));
     }
+
+    public function search_employe(Request $request){
+        $editor = Editor::where('id', $request->search_employe)->get();
+        if($editor->isNotEmpty()){
+            $search_editor = Editor::all();
+        }else{
+            $editor = Editor::all();
+            $search_editor = Editor::all();
+        }
+        return view('backend.Editor.add_editor', compact('editor','search_editor'));
+    }
+
 
     public function store_editor(Request $request){
         $this->validate($request,[

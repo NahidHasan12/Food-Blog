@@ -12,7 +12,20 @@ class CategoryController extends Controller
 {
     public function index(){
         $category = Category::get();
-        return view('backend.category.category', compact('category'));
+        $search_cat = Category::get();
+        return view('backend.category.category', compact('category','search_cat'));
+    }
+
+    public function search_category(Request $request){
+        $category = Category::where('id', $request->cat_search)->get();
+        if($category->isNotEmpty()){
+            $search_cat = Category::all();
+        }else{
+            $search_cat = Category::all();
+            $category = Category::all();
+        }
+
+        return view('backend.category.category', compact('category','search_cat'));
     }
 
     public function category_store(CategoryRequest $request){

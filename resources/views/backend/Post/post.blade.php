@@ -23,14 +23,30 @@
             <div class="card w-100">
                 <div class="card-header d-flex justify-content-between">
                     <div>
-                        <form action="" method="GET">
+                        <form action="{{ route('post.search_post') }}" method="GET">
                             @csrf
                             <select style="width: 300px; float:left; margin-right: 5px" name="post_search" class="form-control select2">
-                                <option selected disabled>id, category or title</option>
-                                @forelse ($category as $item)
-                                <option value="{{ $item->id }}"> {{ $item->name }} </option>
+                                    <option selected disabled>id, category or title</option>
+                                    <option>All Post</option>
+                                @forelse ($search_post as $item)
+                                    <option value="{{ $item->id }}"> ({{ $item->id }}) {{ $item->title }}- {{ $item->category->name }} </option>
                                 @empty
-
+                                    <span class="text-danger">Do Category Found</span>
+                                @endforelse
+                            </select>
+                            <button style="height:28px; padding-top:5px; margin-top: 2px; font-weight:bold; background:#6f42c1; color:white" type="submit" class="btn btn-sm">Find</button>
+                        </form>
+                    </div>
+                    <div>
+                        <form action="{{ route('post.cat_wise_post') }}" method="GET">
+                            @csrf
+                            <select style="width: 300px; float:left; margin-right: 5px" name="cat_wise_post" class="form-control select2">
+                                    <option selected disabled>Category Wise Search</option>
+                                    <option>all Category</option>
+                                @forelse ($category as $item)
+                                    <option value="{{ $item->id }}"> ({{ $item->id }}) {{ $item->name }} </option>
+                                @empty
+                                    <span class="text-danger">Do Category Found</span>
                                 @endforelse
                             </select>
                             <button style="height:28px; padding-top:5px; margin-top: 2px; font-weight:bold; background:#6f42c1; color:white" type="submit" class="btn btn-sm">Find</button>

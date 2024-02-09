@@ -13,8 +13,37 @@ class PostController extends Controller
 {
     public function index(){
         $category = Category::all();
+        $search_post = Post::all();
         $post = Post::all();
-        return view('backend.post.post', compact('category','post'));
+        return view('backend.post.post', compact('category','search_post','post'));
+    }
+
+    public function search_post(Request $request){
+        $post = Post::where('id', $request->post_search)->get();
+        if($post->isNotEmpty()){
+            $category = Category::all();
+            $search_post = Post::all();
+        }else{
+            $category = Category::all();
+            $search_post = Post::all();
+            $post = Post::all();
+        }
+
+        return view('backend.post.post', compact('post','category','search_post'));
+    }
+
+    public function cat_wise_post(Request $request){
+        $post = Post::where('category_id', $request->cat_wise_post)->get();
+        if($post->isNotEmpty()){
+            $category = Category::all();
+            $search_post = Post::all();
+        }else{
+            $category = Category::all();
+            $search_post = Post::all();
+            $post = Post::all();
+        }
+
+        return view('backend.post.post', compact('post','category','search_post'));
     }
 
     // store

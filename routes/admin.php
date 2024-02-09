@@ -32,6 +32,8 @@ Route::middleware(['permission'])->group(function() {
     Route::get('/admin/category/edit/{id}', [CategoryController::class, 'category_edit'])->name('category.edit');
     Route::put('/admin/category/update/{id}', [CategoryController::class, 'category_update'])->name('category.update');
     Route::get('/admin/category/delete/{id}', [CategoryController::class, 'category_delete'])->name('category.delete');
+    // Search Category
+    Route::get('/admin/category/cat_search', [CategoryController::class, 'search_category'])->name('category.search_category');
 
     // post
     Route::get('/admin/post', [PostController::class, 'index'])->name('page.post');
@@ -39,6 +41,9 @@ Route::middleware(['permission'])->group(function() {
     Route::get('/admin/post/edit/{id}', [PostController::class, 'post_edit'])->name('post.edit');
     Route::put('/admin/post/update/{id}', [PostController::class, 'post_update'])->name('post.update');
     Route::get('/admin/post/delete/{id}', [PostController::class, 'post_delete'])->name('post.delete');
+    // Search Post
+    Route::get('/admin/post/search_post', [PostController::class, 'search_post'])->name('post.search_post');
+    Route::get('/admin/post/cat_wise_post', [PostController::class, 'cat_wise_post'])->name('post.cat_wise_post');
 
     //Editor
     Route::get('/admin/editor', [Admin_editorController::class, 'add_editor'])->name('admin.editor');
@@ -46,5 +51,7 @@ Route::middleware(['permission'])->group(function() {
     Route::get('/admin/editor/edit/{id}', [Admin_editorController::class, 'edit_editor'])->name('editor.edit');
     Route::put('/admin/editor/update/{id}', [Admin_editorController::class, 'update_editor'])->name('editor.update');
     Route::get('/admin/editor/delete/{id}', [Admin_editorController::class, 'delete_editor'])->name('editor.delete');
+    // Search Editor
+    Route::get('/admin/editor/search_employe', [Admin_editorController::class, 'search_employe'])->name('editor.search_employe');
 
 });
