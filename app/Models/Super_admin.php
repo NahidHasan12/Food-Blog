@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Admin extends Authenticatable
+class Super_admin extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -18,8 +18,10 @@ class Admin extends Authenticatable
         'slug',
         'email',
         'password',
-        'show_password',
+        'view_password',
         'image',
         'login_at'
     ];
 }
+
+

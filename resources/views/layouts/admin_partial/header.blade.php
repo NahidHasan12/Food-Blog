@@ -64,10 +64,12 @@
             <!-- User Account -->
             <li class="dropdown user-menu">
             <button class="dropdown-toggle nav-link" data-toggle="dropdown">
-                <img src="images/user/user-xs-01.jpg" class="user-image rounded-circle" alt="" />
+                @if (auth()->guard('admin')->check())
+                <img height="40" src="{{ asset('backend/admin_img').'/'.auth()->guard('admin')->user()->image }}" class="user-image rounded-circle" alt="{{ auth()->guard('admin')->user()->image }}" />
+                @endif
                 <span class="d-none d-lg-inline-block">
                     @if (auth()->guard('admin')->check())
-                        {{ auth()->guard('admin')->user()->first_name }}
+                        {{ auth()->guard('admin')->user()->first_name }} {{ auth()->guard('admin')->user()->last_name }}
                     @endif
                 </span>
             </button>

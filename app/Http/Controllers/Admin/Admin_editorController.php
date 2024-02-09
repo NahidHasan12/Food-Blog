@@ -57,7 +57,7 @@ class Admin_editorController extends Controller
         ]);
         // dd($request->all());
         if($request->hasFile('image')){
-            $image = $this->file_update($request->file('image'),'backend/editor',$editor->image);
+            $image = $this->file_update($request->file('image'),'backend/editor/',$editor->image);
         }else{
             $image = $editor->image;
         }

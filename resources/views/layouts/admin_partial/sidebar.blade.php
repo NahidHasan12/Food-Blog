@@ -15,7 +15,7 @@
         <ul class="nav sidebar-inner" id="sidebar-menu">
             <li class="active">
                 <a class="sidenav-item-link" href="{{ route('page.dashboard') }}">
-                    <i class="mdi mdi-briefcase-account-outline"></i>
+                    <i class="mdi mdi-desktop-mac-dashboard"></i>
                     <span class="nav-text">Dashboard</span>
                 </a>
             </li>
@@ -31,31 +31,26 @@
                     <span class="nav-text">Post</span>
                 </a>
             </li>
-            <li>
-                <a class="sidenav-item-link" href="{{ route('page.web_settings') }}">
-                    <i class="mdi mdi-android-debug-bridge"></i>
-                    <span class="nav-text">Web Settings</span>
-                </a>
-            </li>
+
             <li class="section-title"> Pages</li>
 
             <li  class="has-sub" >
             <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users"
                 aria-expanded="false" aria-controls="users">
                 <i class="mdi mdi-face"></i>
-                <span class="nav-text">Editor</span> <b class="caret"></b>
+                <span class="nav-text">Employe</span> <b class="caret"></b>
             </a>
             <ul  class="collapse"  id="users"
                 data-parent="#sidebar-menu">
                 <div class="sub-menu">
                     <li>
                         <a class="sidenav-item-link" href="{{ route('admin.editor') }}">
-                        <span class="nav-text">Add Editor</span>
+                        <span class="nav-text">Add Employe</span>
                         </a>
                     </li>
                     <li>
                         <a class="sidenav-item-link" href="user-activities.html">
-                        <span class="nav-text">Editor Activities</span>
+                        <span class="nav-text">Employe Activities</span>
                         </a>
                     </li>
                 </div>
@@ -65,27 +60,14 @@
             <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#authentication"
                 aria-expanded="false" aria-controls="authentication">
                 <i class="mdi mdi-account"></i>
-                <span class="nav-text">Authentication</span> <b class="caret"></b>
+                <span class="nav-text">Admin Authentication</span> <b class="caret"></b>
             </a>
             <ul  class="collapse"  id="authentication"
                 data-parent="#sidebar-menu">
                 <div class="sub-menu">
-                    <li >
-                        <a class="sidenav-item-link" href="sign-in.html">
-                        <span class="nav-text">Sign In</span>
-
-                        </a>
-                    </li>
                     <li>
-                        <a class="sidenav-item-link" href="sign-up.html">
-                        <span class="nav-text">Sign Up</span>
-
-                        </a>
-                    </li>
-                    <li>
-                        <a class="sidenav-item-link" href="reset-password.html">
-                        <span class="nav-text">Reset Password</span>
-
+                        <a class="sidenav-item-link" href="{{ route('admin.change_password') }}">
+                        <span class="nav-text">Change Password</span>
                         </a>
                     </li>
                 </div>
@@ -103,22 +85,10 @@
             <ul  class="collapse"  id="customization"
                 data-parent="#sidebar-menu">
                 <div class="sub-menu">
-                    <li >
-                        <a class="sidenav-item-link" href="navbar-customization.html">
-                        <span class="nav-text">Navbar</span>
-
-                        </a>
-                    </li>
                     <li>
-                        <a class="sidenav-item-link" href="sidebar-customization.html">
-                        <span class="nav-text">Sidebar</span>
-
-                        </a>
-                    </li>
-                    <li>
-                        <a class="sidenav-item-link" href="styling.html">
-                        <span class="nav-text">Styling</span>
-
+                        <a class="sidenav-item-link" href="{{ route('page.web_settings') }}">
+                            <i class="mdi mdi-android-debug-bridge"></i>
+                            <span class="nav-text"> Web Settings</span>
                         </a>
                     </li>
                 </div>

@@ -19,6 +19,7 @@ class Controller extends BaseController
     }
 
     protected function file_update($file, $folder, $old_file){
+        // dd($file);
         if($old_file != NULL){
             file_exists($folder.$old_file) ? unlink($folder.$old_file) : false;
         }

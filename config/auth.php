@@ -74,7 +74,7 @@ return [
         ],
         'admin' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Admin::class,
+            'model' => App\Models\Super_admin::class,
         ],
         'editor' => [
             'driver' => 'eloquent',

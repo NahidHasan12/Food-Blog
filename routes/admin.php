@@ -14,10 +14,15 @@ Route::middleware(['admin_login'])->group(function () {
 Route::get('/admin/login', [AdminController::class, 'login_from'])->name('admin.login_form');
 Route::post('/admin/check_login', [AdminController::class, 'login'])->name('admin.login');
 });
-Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
+
 
 // page Manage
 Route::middleware(['permission'])->group(function() {
+    // Admin Logout
+    Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
+    Route::get('/admin/change_pass', [AdminController::class, 'change_password'])->name('admin.change_password');
+    Route::put('/admin/forget_pass/{id}', [AdminController::class, 'forget_password'])->name('admin.forget_password');
+
     Route::get('/admin', [DashboardController::class, 'dashboard'])->name('page.dashboard');
     Route::get('/admin/web_settings', [WebSettingsController::class, 'webSettings'])->name('page.web_settings');
 

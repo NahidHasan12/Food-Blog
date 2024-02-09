@@ -54,7 +54,7 @@ class PostController extends Controller
         ]);
 
         if($request->hasFile('image')){
-            $image = $this->file_update($request->file('image'),'backend/post_img',$post->image);
+            $image = $this->file_update($request->file('image'),'backend/post_img/',$post->image);
         }else{
             $image = $post->image;
         }
