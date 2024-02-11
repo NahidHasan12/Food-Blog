@@ -33,19 +33,24 @@
 
 
   <body class="navbar-fixed sidebar-fixed" id="body">
-
+    <script>
+      NProgress.configure({ showSpinner: false });
+      NProgress.start();
+    </script>
 
 
     <div id="toaster"></div>
 
     <div class="wrapper">
-        @include('layouts.admin_partial.sidebar')
+        @include('layouts.editor_partial.sidebar')
 
         <div class="page-wrapper">
 
-            @include('layouts.admin_partial.header')
+            @include('layouts.editor_partial.header')
+
 
             @yield('content')
+
 
             <footer class="footer mt-auto">
                 <script>

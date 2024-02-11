@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class EditorController extends Controller
 {
     public function index(){
-        return view('Editor.dashboard');
+        return view('Editor.pages.dashboard');
     }
 
     public function login_from(){

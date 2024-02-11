@@ -8,3 +8,4 @@
 </h1>
 
 <a href="{{ route('editor.logout') }}">Logout</a>
+

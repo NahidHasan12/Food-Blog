@@ -4,7 +4,7 @@
     <div id="sidebar" class="sidebar sidebar-with-footer">
     <!-- Aplication Brand -->
     <div class="app-brand">
-        <a href="/index.html">
+        <a href="{{ route('pages.home') }}">
             BD
         <span class="brand-name">Cooker</span>
         </a>

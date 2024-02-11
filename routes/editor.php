@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Editor\Editor_catController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Editor\EditorController;
 
@@ -18,5 +19,7 @@ Route::get('/editor/logout', [EditorController::class, 'logout'])->name('editor.
 
 Route::middleware(['editor_permission'])->group(function () {
     Route::get('/editor', [EditorController::class, 'index'])->name('editor.dashboard');
+    Route::get('/editor/category', [Editor_catController::class, 'index'])->name('editor.category');
+    Route::get('/editor/search_category', [Editor_catController::class, 'search_category'])->name('editor.search_category');
 });
 
