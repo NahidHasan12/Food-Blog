@@ -12,7 +12,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <form method="POST" action="{{ route('admin.post.store') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('post.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-6">
@@ -20,16 +20,22 @@
                             <label for="title" class="form-label"> Post Title</label>
                             <input type="text" name="title" class="form-control">
                         </div>
+                        @error('title')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                         <div class="mb-2">
-                          <label for="category" class="form-label">Select Category</label> <br>
-                          <select style="width:300px" class="form-control select2" name="category" id="category">
-                            @forelse ($category as $item)
-                                <option value="{{ $item->id }}"> {{ $item->name }} </option>
-                            @empty
-                                <span class="text-danger text-center">No Category Found</span>
-                            @endforelse
-                        </select>
+                            <label for="category" class="form-label">Select Category</label> <br>
+                            <select style="width:300px" class="form-control select2" name="category" id="category">
+                                @forelse ($category as $item)
+                                    <option value="{{ $item->id }}"> {{ $item->name }} </option>
+                                @empty
+                                    <span class="text-danger text-center">No Category Found</span>
+                                @endforelse
+                            </select>
                         </div>
+                        @error('category')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="col-6">
                       <div class="mb-2">
@@ -39,10 +45,16 @@
                           <option value="0">Deactive</option>
                         </select>
                       </div>
+                      @error('status')
+                        <span class="text-danger">{{ $message }}</span>
+                      @enderror
                       <div class="mb-2">
                         <label for="image" class="form-label"> Post Image</label>
                         <input type="file" name="image" class="form-control dropify">
-                    </div>
+                      </div>
+                      @error('image')
+                        <span class="text-danger">{{ $message }}</span>
+                      @enderror
                     </div>
                 </div>
                 <div class="row">
@@ -50,6 +62,9 @@
                     <label for="details" class="form-label"> Post Articel</label>
                     <textarea id="summernote" name="details" class="form-control" cols="30" rows="10"></textarea>
                   </div>
+                  @error('details')
+                    <span class="text-danger">{{ $message }}</span>
+                   @enderror
                 </div>
 
         </div>

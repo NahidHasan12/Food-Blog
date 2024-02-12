@@ -37,10 +37,11 @@ Route::middleware(['permission'])->group(function() {
 
     // post
     Route::get('/admin/post', [PostController::class, 'index'])->name('page.post');
-    Route::post('/admin/post/store', [PostController::class, 'post_store'])->name('post.store');
-    Route::get('/admin/post/edit/{id}', [PostController::class, 'post_edit'])->name('post.edit');
-    Route::put('/admin/post/update/{id}', [PostController::class, 'post_update'])->name('post.update');
-    Route::get('/admin/post/delete/{id}', [PostController::class, 'post_delete'])->name('post.delete');
+    Route::post('/admin/post/store', [PostController::class, 'post_store'])->name('admin.post.store');
+    Route::get('/admin/post/edit/{id}', [PostController::class, 'post_edit'])->name('admin.post.edit');
+    Route::put('/admin/post/update/{id}', [PostController::class, 'post_update'])->name('admin.post.update');
+    Route::get('/admin/post/view/{id}', [PostController::class, 'post_view'])->name('admin.post.view');
+    Route::get('/admin/post/delete/{id}', [PostController::class, 'post_delete'])->name('admin.post.delete');
     // Search Post
     Route::get('/admin/post/search_post', [PostController::class, 'search_post'])->name('post.search_post');
     Route::get('/admin/post/cat_wise_post', [PostController::class, 'cat_wise_post'])->name('post.cat_wise_post');

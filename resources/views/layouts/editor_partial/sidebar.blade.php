@@ -26,7 +26,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="sidenav-item-link" href="">
+                    <a class="sidenav-item-link" href="{{ route('editor.post') }}">
                         <i class="mdi mdi-package-variant"></i>
                         <span class="nav-text">Post</span>
                     </a>

@@ -1,5 +1,5 @@
 
-@extends('layouts.admin')
+@extends('layouts.editor')
 @section("title","Edit Post")
 
 @section('content')
@@ -17,7 +17,7 @@
            </div>
        </div>
         <div class="row">
-            <a href="{{ route('page.post') }}" title="Back" class="btn btn-sm btn-outline-danger"> <i style="font-size:15px" class="mdi mdi-arrow-left-bold"></i></a>
+            <a href="{{ route('editor.post') }}" title="Back" class="btn btn-sm btn-outline-danger"> <i style="font-size:15px" class="mdi mdi-arrow-left-bold"></i></a>
         </div>
 
         <div class="row mt-4">
@@ -26,7 +26,7 @@
                     <h4 class="card-title">Edit Post</h4>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('admin.post.update',$post->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('post.update',$post->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="row">
