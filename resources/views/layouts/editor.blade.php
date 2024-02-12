@@ -20,7 +20,7 @@
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('/backend') }}/path/to/font-awesome/css/font-awesome.min.css">
 
-  <link href="{{ asset('/backend') }}/plugins/toaster/toastr.min.css" rel="stylesheet" />
+
   <link id="main-css-href" rel="stylesheet" href="{{ asset('/backend') }}/css/style.css" />
   <link href="{{ asset('/backend') }}/images/favicon.png" rel="shortcut icon" />
   {{-- select2 --}}
@@ -51,14 +51,6 @@
 
             @yield('content')
 
-
-            <footer class="footer mt-auto">
-                <script>
-                    var d = new Date();
-                    var year = d.getFullYear();
-                    document.getElementById("copy-year").innerHTML = year;
-                </script>
-            </footer>
         </div>
 
     </div>
@@ -185,7 +177,6 @@
 
 
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script src="{{ asset('/backend') }}/plugins/toaster/toastr.min.js"></script>
     <script src="{{ asset('/backend') }}/js/mono.js"></script>
     <script src="{{ asset('/backend') }}/js/chart.js"></script>
     <script src="{{ asset('/backend') }}/js/map.js"></script>
