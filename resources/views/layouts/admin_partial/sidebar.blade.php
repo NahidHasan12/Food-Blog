@@ -49,7 +49,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="sidenav-item-link" href="user-activities.html">
+                        <a class="sidenav-item-link" href="{{ route('admin.editor.activities') }}">
                         <span class="nav-text">Employe Activities</span>
                         </a>
                     </li>
@@ -105,9 +105,9 @@
         <div class="sidebar-footer-content">
         <ul class="d-flex">
             <li>
-            <a href="user-account-settings.html" data-toggle="tooltip" title="Profile settings"><i class="mdi mdi-settings"></i></a></li>
+            <a href="{{ route('admin.change_password') }}" data-toggle="tooltip" title="Profile settings"><i class="mdi mdi-settings"></i></a></li>
             <li>
-            <a href="#" data-toggle="tooltip" title="No chat messages"><i class="mdi mdi-chat-processing"></i></a>
+            <a href="{{ route('admin.ticket') }}" data-toggle="tooltip" title="No chat messages"><i class="mdi mdi-chat-processing"></i></a>
             </li>
         </ul>
         </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Editor;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class Admin_editorController extends Controller
@@ -105,5 +106,16 @@ class Admin_editorController extends Controller
         }else{
             return redirect()->back()->with('error','Something Error');
         }
+    }
+
+    // Editor Activities
+    public function editor_activities(){
+        $editor = Editor::all();
+        return view('backend.Editor.editor_activities', compact('editor'));
+    }
+    public function editor_post($id){
+        $post = Post::where('user_id', $id)->get();
+        $count_post = Post::where('user_id', $id)->count();
+        return view('backend.Editor.editor_post', compact('post','count_post'));
     }
 }

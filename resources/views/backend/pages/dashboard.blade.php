@@ -1,6 +1,38 @@
 @extends('layouts.admin')
 @section("title","Dashboard")
 
+@section('css')
+<style>
+
+    .image-upload > input
+    {
+        display: none;
+    }
+    .left_sms{
+        background: rgb(101, 27, 133);
+        width: 180px;
+        min-height: 50px;
+        border: 1px solid black;
+        color: white;
+        border-radius: 26px 22px 22px 5px;
+        padding: 10px;
+        margin-bottom: 5px
+    }
+    .right_sms{
+        background: rgb(37, 126, 34);
+        width: 180px;
+        min-height: 50px;
+        border: 1px solid black;
+        color: white;
+        border-radius: 22px 26px 5px 22px;
+        padding: 10px;
+        margin: 0 0 5px 36px;
+    }
+
+
+</style>
+@endsection
+
 @section('content')
 
 <div class="content-wrapper">
@@ -30,7 +62,7 @@
                     <div class="card-header">
                     <h2 style="margin-left: 50px">{{ $total_category }}</h2>
                     <div class="sub-title">
-                        <span class="mr-1">Expense of this year</span> |
+                        <span class="mr-1">Total Category</span> |
                         <span class="mx-1">45%</span>
                         <i class="mdi mdi-arrow-down-bold text-danger"></i>
                     </div>
@@ -99,66 +131,66 @@
 
 
             </div>
-    <div class="col-xl-4">
-        <div class="card card-default chat">
-            <div class="card-header">
-                <h2>Selena Wagner</h2>
-                <div class="dropdown dropdown-chat-state">
-                <button class="dropdown-toggle btn btn-primary btn-rounded-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                    <i class="mdi mdi-account-alert"></i>
-                </button>
-                </div>
-            </div>
-            <div class="card-body pb-0" data-simplebar style="height: 363px;">
-                <!-- Media Chat Left -->
-                <div class="media media-chat">
-                <img src="images/user/user-sm-01.jpg" class="rounded-circle" alt="Avata Image">
-                <div class="media-body">
-                    <div class="text-content">
-                    <span class="message">Hello my name is anna.</span>
-                    <time class="time">5 mins ago</time>
-                    </div>
-                </div>
-                </div>
-
-                <!-- Media Chat Right -->
-                <div class="media media-chat media-chat-right">
-                <div class="media-body">
-                    <div class="text-content">
-                    <span class="message">Hello i am Riman.</span>
-                    <time class="time">4 mins ago</time>
-                    </div>
-                    <div class="text-content">
-                    <span class="message">I want to know about yourself</span>
-                    <time class="time">3 mins ago</time>
-                    </div>
-                </div>
-                <img src="images/user/user-sm-02.jpg" class="rounded-circle" alt="Avata Image">
-                </div>
-
-                <!-- Media Chat Left -->
-                <div class="media media-chat">
-                <img src="images/user/user-sm-01.jpg" class="rounded-circle" alt="Avata Image">
-                <div class="media-body">
-                    <div class="text-content">
-                    <span class="message">Its had resolving otherwise she contented therefore.</span>
-                    <time class="time">1 mins ago</time>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="chat-footer">
-                <form>
-                    <div class="input-group input-group-chat">
-                        <div class="input-group-prepend">
-                        <span class="emoticon-icon mdi mdi-emoticon-happy-outline"></span>
+            <div class="col-xl-4">
+                <div class="card card-default chat">
+                        <div class="card-header">
+                            <h2>Selena Wagner</h2>
+                            <div class="dropdown dropdown-chat-state">
+                                <img style="width: 40px; height:40px; border-radius:50%" src="" alt="">
+                            </div>
                         </div>
-                        <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                    </div>
-                </form>
+                        <div class="card-body pb-0"  style="height: 383px;">
+                            <div style="overflow: auto; height:380px">
+
+                                <!-- Media Chat Left -->
+                                <div class="left_sms">
+                                    <p class="l_text">my name is nahif hasan</p>
+                                </div>
+                                <!-- Media Chat Right -->
+                                <div class="right_sms">
+                                    <p class="r_text">my name is nahif hasan</p>
+                                </div>
+                                <!-- Media Chat Left -->
+                                <div class="left_sms">
+                                    <p class="l_text">my name is nahif hasan</p>
+                                </div>
+                                <!-- Media Chat Right -->
+                                <div class="right_sms">
+                                    <p class="r_text">my name is nahif hasan</p>
+                                </div>
+                                <!-- Media Chat Left -->
+                                <div class="left_sms">
+                                    <p class="l_text">my name is nahif hasan</p>
+                                </div>
+                                <!-- Media Chat Right -->
+                                <div class="right_sms">
+                                    <p class="r_text">my name is nahif hasan</p>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="chat-footer">
+                                <form>
+                                    <div class="input-group input-group-chat">
+                                        <div class="input-group-prepend">
+                                        <span class="emoticon-icon mdi mdi-emoticon-happy-outline"></span>
+                                        </div>
+                                        <div class="input-group-prepend">
+                                            <div class="image-upload">
+                                                <label style="font-size:18px; color:rgb(207, 59, 5); margin-left:10px; cursor:pointer;" class="mt-2" for="file-input">
+                                                    <i title="Upload Image" class="mdi mdi-pinwheel"></i>
+                                                </label>
+
+                                                <input id="file-input" type="file"/>
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                        <button style="margin: 5px; font-size:22px; color:rgb(10, 49, 147)" type="submit"><i class="mdi mdi-send"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+
+                </div>
             </div>
-        </div>
-    </div>
 </div>
 
 </div>

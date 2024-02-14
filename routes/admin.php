@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EditorController;
+use App\Http\Controllers\Admin\TicketController;
 use App\Http\Controllers\Admin\WebSettingsController;
 
 //login Route
@@ -54,5 +55,13 @@ Route::middleware(['permission'])->group(function() {
     Route::get('/admin/editor/delete/{id}', [Admin_editorController::class, 'delete_editor'])->name('editor.delete');
     // Search Editor
     Route::get('/admin/editor/search_employe', [Admin_editorController::class, 'search_employe'])->name('editor.search_employe');
+
+    //Editor Activities
+    Route::get('/admin/editor/activities', [Admin_editorController::class, 'editor_activities'])->name('admin.editor.activities');
+    Route::get('/admin/editor/post/{id}', [Admin_editorController::class, 'editor_post'])->name('admin.editor.post');
+
+    // Ticket Route
+    Route::get('/admin/ticket', [TicketController::class, 'ticket'])->name('admin.ticket');
+    Route::post('/admin/ticket/store', [TicketController::class, 'ticket_store'])->name('admin.ticket.store');
 
 });
