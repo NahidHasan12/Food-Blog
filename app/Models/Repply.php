@@ -11,6 +11,7 @@ class Repply extends Model
     use HasFactory;
     protected $guarded=[];
 
+    // relation ticket model
     public function ticket(){
         return $this->belongsTo(Ticket::class);
     }
