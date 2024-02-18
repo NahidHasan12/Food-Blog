@@ -60,7 +60,7 @@ Route::middleware(['permission'])->group(function() {
     Route::get('/admin/editor/activities', [Admin_editorController::class, 'editor_activities'])->name('admin.editor.activities');
     Route::get('/admin/editor/post/{id}', [Admin_editorController::class, 'editor_post'])->name('admin.editor.post');
 
-    // Support Ticket Route
+    // Support Ticket Route //
     Route::get('/admin/ticket', [TicketController::class, 'ticket'])->name('admin.ticket');
     Route::post('/admin/ticket/store', [TicketController::class, 'ticket_store'])->name('admin.ticket.store');
 
