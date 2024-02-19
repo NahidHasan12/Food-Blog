@@ -28,7 +28,7 @@
           <div class="row">
               <div class="col-lg-8 col-md-8">
                 <ul class="top-info text-center text-md-left">
-                    <li><i class="fas fa-map-marker-alt"></i> <p class="info-text">9051 Constra Incorporate, USA</p>
+                    <li><i class="fas fa-map-marker-alt"></i> <p class="info-text">5800 Bogura, Bangladesh</p>
                     </li>
                 </ul>
               </div>
@@ -37,16 +37,16 @@
               <div class="col-lg-4 col-md-4 top-social text-center text-md-right">
                 <ul class="list-unstyled">
                     <li>
-                      <a title="Facebook" href="">
+                      <a title="Facebook" href="https://www.facebook.com/profile.php?id=100036523093263" target="_blank">
                           <span class="social-icon"><i class="fab fa-facebook-f"></i></span>
                       </a>
-                      <a title="Twitter" href="">
+                      <a title="Twitter" href="https://twitter.com/NahidHa31164683" target="_blank">
                           <span class="social-icon"><i class="fab fa-twitter"></i></span>
                       </a>
-                      <a title="Instagram" href="">
+                      <a title="Instagram" href="https://www.instagram.com/freelancernahid1/" target="_blank">
                           <span class="social-icon"><i class="fab fa-instagram"></i></span>
                       </a>
-                      <a title="Linkdin" href="">
+                      <a title="Linkdin" href="https://github.com/NahidHasan12" target="_blank">
                           <span class="social-icon"><i class="fab fa-github"></i></span>
                       </a>
                     </li>
@@ -56,52 +56,6 @@
         </div>
     </div>
 <header id="header" class="header-one">
-  <div class="bg-white">
-    <div class="container">
-      <div class="logo-area">
-          <div class="row align-items-center">
-            <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
-                <a class="d-block" href="index.html">
-                  <img loading="lazy" src="images/logo.png" alt="Constra">
-                </a>
-            </div>
-
-            <div class="col-lg-9 header-right">
-                <ul class="top-info-box">
-                  <li>
-                    <div class="info-box">
-                      <div class="info-box-content">
-                          <p class="info-box-title">Call Us</p>
-                          <p class="info-box-subtitle">(+9) 847-291-4353</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="info-box">
-                      <div class="info-box-content">
-                          <p class="info-box-title">Email Us</p>
-                          <p class="info-box-subtitle">office@Constra.com</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="last">
-                    <div class="info-box last">
-                      <div class="info-box-content">
-                          <p class="info-box-title">Global Certificate</p>
-                          <p class="info-box-subtitle">ISO 9001:2017</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="header-get-a-quote">
-                    <a class="btn btn-primary" href="contact.html">Get A Quote</a>
-                  </li>
-                </ul>
-            </div>
-          </div>
-
-      </div>
-    </div>
-  </div>
 
   @include('layouts.frontend_partial.nav')
 </header>
@@ -150,10 +104,10 @@
               <li><a href="service-single.html">Design and Build</a></li>
               <li><a href="service-single.html">Self-Perform Construction</a></li>
             </ul>
-          </div><!-- Col end -->
-        </div><!-- Row end -->
-      </div><!-- Container end -->
-    </div><!-- Footer main end -->
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="copyright">
       <div class="container">
@@ -162,22 +116,10 @@
             <div class="copyright-info">
               <span>Copyright &copy; <script>
                   document.write(new Date().getFullYear())
-                </script>, Designed &amp; Developed by <a href="https://themefisher.com">Themefisher</a></span>
+                </script> Develop By <a target="_blank" href="https://www.facebook.com/profile.php?id=100036523093263">Nahid Hasan</a></span>
             </div>
           </div>
-
-          <div class="col-md-6">
-            <div class="footer-menu text-center text-md-right">
-              <ul class="list-unstyled">
-                <li><a href="about.html">About</a></li>
-                <li><a href="team.html">Our people</a></li>
-                <li><a href="faq.html">Faq</a></li>
-                <li><a href="news-left-sidebar.html">Blog</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-              </ul>
-            </div>
-          </div>
-        </div><!-- Row end -->
+        </div>
 
         <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
           <button class="btn btn-primary" title="Back to Top">
