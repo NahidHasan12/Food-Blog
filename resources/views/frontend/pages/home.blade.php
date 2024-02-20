@@ -84,7 +84,6 @@
             <a class="btn btn-primary" href="{{ route('pages.category') }}">View All Recipe</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
