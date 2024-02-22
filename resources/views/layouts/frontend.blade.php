@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="{{ asset('/frontend') }}/plugins/slick/slick-theme.css">
   <link rel="stylesheet" href="{{ asset('/frontend') }}/plugins/colorbox/colorbox.css">
   <link rel="stylesheet" href="{{ asset('/frontend') }}/css/style.css">
-
+@yield('frontend_style')
 </head>
 <body>
   <div class="body-inner">

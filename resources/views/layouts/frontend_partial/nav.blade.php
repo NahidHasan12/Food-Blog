@@ -12,7 +12,14 @@
                 <div id="navbar-collapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" href="{{ route('pages.home') }}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('pages.category') }}">All Category</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">All Category <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                              <li><a href="{{ route('pages.fast_food') }}">Fast Food</a></li>
+                              <li><a href="{{ route('pages.diet_food') }}">Diet Food</a></li>
+                              <li><a href="{{ route('pages.biriany') }}">Biriany</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('pages.about') }}">About Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('pages.contact') }}">Contact</a></li>
                     </ul>

@@ -20,7 +20,13 @@ class PagesController extends Controller
     public function contact(){
         return view('frontend.pages.contact');
     }
-    public function category(){
-        return view('frontend.pages.category');
+    public function diet_food(){
+        return view('frontend.pages.dietfood');
+    }
+    public function fast_food(){
+        return view('frontend.pages.fastfood');
+    }
+    public function biriany(){
+        return view('frontend.pages.biriany');
     }
 }

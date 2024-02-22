@@ -30,7 +30,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', [PagesController::class, 'home'])->name('pages.home');
 Route::get('/about', [PagesController::class, 'about'])->name('pages.about');
 Route::get('/contact', [PagesController::class, 'contact'])->name('pages.contact');
-Route::get('/category', [PagesController::class, 'category'])->name('pages.category');
+Route::get('/diet_food', [PagesController::class, 'diet_food'])->name('pages.diet_food');
+Route::get('/fast_food', [PagesController::class, 'fast_food'])->name('pages.fast_food');
+Route::get('/biriany', [PagesController::class, 'biriany'])->name('pages.biriany');
 
 
 
