@@ -11,6 +11,7 @@
 </style>
 @endsection
 {{-- end style section  --}}
+
 @section('content')
 <div id="banner-area" class="banner-area" style="background-image:url({{ asset('/frontend') }}/images/banner/banner1.jpg)">
     <div class="banner-text">
