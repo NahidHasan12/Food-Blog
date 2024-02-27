@@ -10,6 +10,7 @@
     }
 </style>
 @endsection
+
 {{-- end style section  --}}
 
 @section('content')
