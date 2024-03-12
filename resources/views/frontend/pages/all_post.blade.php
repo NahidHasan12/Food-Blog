@@ -1,6 +1,6 @@
 
 @extends('layouts.frontend')
-@section("title","Fast-Food")
+@section("title","All Post")
 @section('frontend_style')
 <style>
     .recent_post:hover{
@@ -11,38 +11,26 @@
 </style>
 @endsection
 @section('content')
-<div id="banner-area" class="banner-area" style="background-image:url({{ asset('/frontend') }}/images/banner/banner1.jpg)">
-    <div class="banner-text">
-      <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-                <div class="banner-heading">
-                  <h1 class="banner-title">Fast Food</h1>
-                </div>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
+
 
   <section id="main-container" class="main-container">
     <div class="container">
 
         <div class="row">
-            @forelse ($fast as $fast)
-                <div class="col-4">
+            @forelse ($post as $post)
+                <div class="col-4 mb-3">
                     <div class="card p2 border border-dark recent_post">
                         <div class="row">
                         <div class="col-12">
-                            <img style="height: 200px; width:100%" src="{{ asset('backend/post_img/'.$fast->image) }}" alt="{{ $fast->image }}">
+                            <img style="height: 200px; width:100%" src="{{ asset('backend/post_img/'.$post->image) }}" alt="{{ $post->image }}">
                         </div>
                         </div>
                         <div class="row mt-2 text-center">
                             <div class="col-12">
-                                <h4>{{ $fast->title }}</h4>
-                                    {!! Str::limit($fast->details, 80, '...') !!}
+                                <h4>{{ $post->title }}</h4>
+                                    {!! Str::limit($post->details, 80, '...') !!}
                                 <hr>
-                                <a style="margin-top: -40px" href="{{ route('pages.single',$fast->id) }}" class="btn btn-sm btn-dark">View Post</a>
+                                <a style="margin-top: -40px" href="{{ route('pages.single',$post->id) }}" class="btn btn-sm btn-dark">View Post</a>
                             </div>
                         </div>
                     </div>

@@ -33,6 +33,11 @@ Route::get('/contact', [PagesController::class, 'contact'])->name('pages.contact
 Route::get('/diet_food', [PagesController::class, 'diet_food'])->name('pages.diet_food');
 Route::get('/fast_food', [PagesController::class, 'fast_food'])->name('pages.fast_food');
 Route::get('/biriany', [PagesController::class, 'biriany'])->name('pages.biriany');
+Route::get('/recent', [PagesController::class, 'recent'])->name('pages.recent');
+Route::get('/all_post', [PagesController::class, 'all_post'])->name('pages.all_post');
+Route::get('/privacy', [PagesController::class, 'privacy'])->name('pages.privacy');
+Route::get('/single/{id}', [PagesController::class, 'single'])->name('pages.single');
+
 
 
 

@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section("title","Aboute")
+@section("title","About")
 
 @section('content')
 <div id="banner-area" class="banner-area" style="background-image:url(images/banner/banner1.jpg)">

@@ -32,114 +32,31 @@
   <section id="main-container" class="main-container">
     <div class="container">
         <div class="row">
-            <div class="col-4 mb-2">
-                <div class="card p2 border border-dark recent_post">
-                    <div class="row">
-                    <div class="col-12">
-                        <img style="height: 200px; width:100%" src="{{ asset('backend/admin_img/17079164311564580920.png') }}" alt="">
-                    </div>
-                    </div>
-                    <div class="row mt-2 text-center">
+            @forelse ($biriany as $post)
+                <div class="col-4">
+                    <div class="card p2 border border-dark recent_post">
+                        <div class="row">
                         <div class="col-12">
-                            <h4>This is Post title</h4>
-                            <p class="p-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                            <hr>
-                            <a style="margin-top: -40px" href="" class="btn btn-sm btn-dark">View Post</a>
+                            <img style="height: 200px; width:100%" src="{{ asset('backend/post_img/'.$post->image) }}" alt="{{ $post->image }}">
+                        </div>
+                        </div>
+                        <div class="row mt-2 text-center">
+                            <div class="col-12">
+                                <h4>{{ $post->title }}</h4>
+                                    {!! Str::limit($post->details, 80, '...') !!}
+                                <hr>
+                                <a style="margin-top: -40px" href="{{ route('pages.single',$post->id) }}" class="btn btn-sm btn-dark">View Post</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-4 mb-2">
-                <div class="card p2 border border-dark recent_post">
-                    <div class="row">
-                    <div class="col-12">
-                        <img style="height: 200px; width:100%" src="{{ asset('backend/admin_img/17079164311564580920.png') }}" alt="">
-                    </div>
-                    </div>
-                    <div class="row mt-2 text-center">
-                        <div class="col-12">
-                            <h4>This is Post title</h4>
-                            <p class="p-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                            <hr>
-                            <a style="margin-top: -40px" href="" class="btn btn-sm btn-dark">View Post</a>
-                        </div>
+            @empty
+                <div class="col-4">
+                    <div class="card p2 border border-dark recent_post">
+                        <h3 class="text-danger text-center">NO Post Found</h3>
                     </div>
                 </div>
-            </div>
-            <div class="col-4 mb-2">
-                <div class="card p2 border border-dark recent_post">
-                    <div class="row">
-                    <div class="col-12">
-                        <img style="height: 200px; width:100%" src="{{ asset('backend/admin_img/17079164311564580920.png') }}" alt="">
-                    </div>
-                    </div>
-                    <div class="row mt-2 text-center">
-                        <div class="col-12">
-                            <h4>This is Post title</h4>
-                            <p class="p-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                            <hr>
-                            <a style="margin-top: -40px" href="" class="btn btn-sm btn-dark">View Post</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 mb-2">
-                <div class="card p2 border border-dark recent_post">
-                    <div class="row">
-                    <div class="col-12">
-                        <img style="height: 200px; width:100%" src="{{ asset('backend/admin_img/17079164311564580920.png') }}" alt="">
-                    </div>
-                    </div>
-                    <div class="row mt-2 text-center">
-                        <div class="col-12">
-                            <h4>This is Post title</h4>
-                            <p class="p-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                            <hr>
-                            <a style="margin-top: -40px" href="" class="btn btn-sm btn-dark">View Post</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 mb-2">
-                <div class="card p2 border border-dark recent_post">
-                    <div class="row">
-                    <div class="col-12">
-                        <img style="height: 200px; width:100%" src="{{ asset('backend/admin_img/17079164311564580920.png') }}" alt="">
-                    </div>
-                    </div>
-                    <div class="row mt-2 text-center">
-                        <div class="col-12">
-                            <h4>This is Post title</h4>
-                            <p class="p-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                            <hr>
-                            <a style="margin-top: -40px" href="" class="btn btn-sm btn-dark">View Post</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 mb-2">
-                <div class="card p2 border border-dark recent_post">
-                    <div class="row">
-                    <div class="col-12">
-                        <img style="height: 200px; width:100%" src="{{ asset('backend/admin_img/17079164311564580920.png') }}" alt="">
-                    </div>
-                    </div>
-                    <div class="row mt-2 text-center">
-                        <div class="col-12">
-                            <h4>This is Post title</h4>
-                            <p class="p-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                            <hr>
-                            <a style="margin-top: -40px" href="" class="btn btn-sm btn-dark">View Post</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforelse
         </div>
     </div>
   </section>

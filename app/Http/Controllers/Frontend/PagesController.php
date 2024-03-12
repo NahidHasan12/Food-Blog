@@ -12,7 +12,19 @@ class PagesController extends Controller
         $all = Post::latest()->limit(6)->get();
         $slider = Post::latest()->limit(3)->get();
         $recent = Post::latest()->limit(3)->get();
-        return view('frontend.pages.home', compact('slider','recent','all'));
+        $biriany = Post::where('category_id', '2')->latest()->limit(3)->get();
+        $diet = Post::where('category_id', '3')->latest()->limit(3)->get();
+        $fast = Post::where('category_id', '4')->latest()->limit(3)->get();
+        return view('frontend.pages.home', compact('slider','recent','all','biriany','diet','fast'));
+    }
+    public function all_post(){
+        $post = Post::all();
+        return view('frontend.pages.all_post', compact('post'));
+    }
+    public function single($id){
+        $post= Post::findOrFail($id);
+        //dd($post);
+        return view('frontend.pages.single', compact('post'));
     }
     public function about(){
         return view('frontend.pages.about');
@@ -21,12 +33,18 @@ class PagesController extends Controller
         return view('frontend.pages.contact');
     }
     public function diet_food(){
-        return view('frontend.pages.dietfood');
+        $diet = Post::where('category_id', '3')->latest()->get();
+        return view('frontend.pages.dietfood', compact('diet'));
     }
     public function fast_food(){
-        return view('frontend.pages.fastfood');
+        $fast = Post::where('category_id', '4')->latest()->get();
+        return view('frontend.pages.fastfood', compact('fast'));
     }
     public function biriany(){
-        return view('frontend.pages.biriany');
+        $biriany = Post::where('category_id', '2')->latest()->get();
+        return view('frontend.pages.biriany', compact('biriany'));
+    }
+    public function privacy(){
+        return view('frontend.pages.privacy');
     }
 }
