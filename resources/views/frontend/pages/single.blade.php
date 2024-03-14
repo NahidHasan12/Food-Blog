@@ -15,7 +15,6 @@
 
   <section id="main-container" class="main-container">
     <div class="container">
-
         <div class="row mb-2">
             <div class="col-8 border border-dark">
                 <div class="row p-1">
