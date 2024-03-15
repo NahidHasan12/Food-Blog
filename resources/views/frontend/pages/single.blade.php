@@ -21,7 +21,6 @@
                     <img style="width: 95%; height:400px; border-radius:10px; margin: 0 auto;" src="{{ asset('backend/post_img/'.$post->image) }}" alt="">
                 </div>
                 <div class="row p-1">
-
                     <div class="col ml-1">
                         <b>Category : </b> {{ $post->category->name }}
                     </div>
