@@ -22,7 +22,7 @@
                 </div>
                 <div class="row p-1">
                     <div class="col ml-1">
-                        {{-- sow category code --}}
+                        {{-- sow category --}}
                         <b>Category : </b> {{ $post->category->name }}
                     </div>
                 </div>
