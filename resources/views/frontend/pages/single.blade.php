@@ -26,7 +26,7 @@
                         <b>Category : </b> {{ $post->category->name }}
                     </div>
                 </div>
-                
+                {{-- details  --}}
                 <div class="row p-4">
                     <h3 class="mb-2">{{ $post->title }}</h3>
                     {!! $post->details !!}
